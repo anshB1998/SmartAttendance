@@ -1,0 +1,7 @@
+mkdir dataset
+mkdir trainer
+sudo apt-get install python3-pip
+sudo apt-get install python3-numpy
+pip3 install opencv-python
+pip3 install pillow
+pip install opencv-contrib-python
