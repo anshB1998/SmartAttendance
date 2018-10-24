@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 import os
+from db import insertIntoDB
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read('trainer/trainer.yml')
@@ -70,6 +71,11 @@ while True:
 
 # Do a bit of cleanup
 print("\n Exiting Program and cleanup stuff")
-print("People Found: ", peopleFound)
 cam.release()
 cv2.destroyAllWindows()
+
+
+print("People Found: ", peopleFound)
+
+for people in peopleFound:
+    insertIntoDB(people)
